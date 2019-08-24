@@ -34,13 +34,29 @@ h1 {
 	margin: 0;
 }
 
-h2 {
+h2, #result {
 	font-family: "Raleway", san-serif;
 	color: #0D2C40;
 	letter-spacing: 1px;
 	font-weight: 600;
 	font-size: 20px;
 	text-transform: uppercase;
+}
+
+button {
+	font-family: "Raleway", san-serif;
+	color: #0D2C40;
+	letter-spacing: 1px;
+	font-weight: 600;
+	font-size: 20px;
+	margin-left: 10px;
+	border-width: 2px;
+	border-radius: 5px;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: #C7C7C7;
 }
 
 a {

@@ -34,10 +34,11 @@ function createBoard() {
 
 function checkForMatch() {
 	if (cardsInPlay.length === 2) {
+		var result = document.getElementById("result");
 		if (cardsInPlay[0] === cardsInPlay[1]) {
-			alert("You found a match!");
+			result.innerHTML = "You found a match! ";
 		} else {
-			alert("Sorry, try again.");
+			result.innerHTML = "Sorry, try again. ";
 		}
 	}
 }
@@ -52,3 +53,4 @@ function flipCard() {
 }
 
 createBoard();
+
