@@ -21,9 +21,19 @@ var cards = [
 	}
 ];
 var cardsInPlay = [];
+var numCards = cards.length;
+var cardIndices = Array.from(Array(numCards).keys());
+
+function shuffleCards() {
+	var shuffled = cardIndices.sort(function () {
+		return Math.random() - Math.random();
+	});
+	return shuffled;
+}
 
 function createBoard() {
-	for (var i = 0; i < cards.length; i++) {
+	let deck = shuffleCards();
+	for (i of deck) {
 		var cardElement = document.createElement("img");
 		cardElement.setAttribute("src", "images/back.png");
 		cardElement.setAttribute("data-id", i);
@@ -37,8 +47,10 @@ function checkForMatch() {
 		var result = document.getElementById("result");
 		if (cardsInPlay[0] === cardsInPlay[1]) {
 			result.innerHTML = "You found a match!";
+			result.style.color = "#F15B31";
 		} else {
 			result.innerHTML = "Sorry, try again.";
+			result.style.color = "#F15B31";
 		}
 	}
 }
@@ -53,15 +65,28 @@ function flipCard() {
 }
 
 function resetBoard() {
-	var cardsList = document.getElementsByTagName("img");
+	var cardElements = document.getElementsByTagName("img");
 	for (var i = 0; i < cards.length; i++) {
-		cardsList[i].setAttribute("src", "images/back.png");
+		cardElements[i].setAttribute("src", "images/back.png");
 	}
 	var result = document.getElementById("result");
 	result.innerHTML = "Choose two cards";
+	result.removeAttribute("style");
 	cardsInPlay = [];
+}
+
+function shuffleBoard() {
+	let deck = shuffleCards();
+	let cardElements = document.getElementsByTagName("img");
+	for (i of cardIndices) {
+		cardElements[i].setAttribute("data-id", deck[i]);
+	}
+	resetBoard();
 }
 
 createBoard();
 var resetButton = document.getElementsByTagName("button")[0];
 resetButton.addEventListener("click", resetBoard);
+
+var shuffleButton = document.getElementsByTagName("button")[1];
+shuffleButton.addEventListener("click", shuffleBoard);
