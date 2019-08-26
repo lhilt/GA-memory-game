@@ -84,9 +84,13 @@ function shuffleBoard() {
 	resetBoard();
 }
 
-createBoard();
-var resetButton = document.getElementsByTagName("button")[0];
-resetButton.addEventListener("click", resetBoard);
+function main() {
+	createBoard();
+	var resetButton = document.getElementsByTagName("button")[0];
+	resetButton.addEventListener("click", resetBoard);
 
-var shuffleButton = document.getElementsByTagName("button")[1];
-shuffleButton.addEventListener("click", shuffleBoard);
+	var shuffleButton = document.getElementsByTagName("button")[1];
+	shuffleButton.addEventListener("click", shuffleBoard);	
+}
+
+main();
