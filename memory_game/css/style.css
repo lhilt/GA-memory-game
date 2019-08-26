@@ -89,27 +89,12 @@ footer {
 	font-size: 14px;
 	letter-spacing: 0.08em;
 	font-weight: 500;
+	display: flex;
+	justify-content: space-between;
 }
 
 footer p {
 	font-family: "Raleway", san-serif;
-}
-
-.copyright {
-	float: left;
-}
-
-.message {
-	float: right;
-}
-
-.clearfix:after {
-visibility: hidden;
-display: block;
-content: " ";
-clear: both;
-height: 0;
-font-size: 0;
 }
 
 .name {
