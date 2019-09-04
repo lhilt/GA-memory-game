@@ -23,6 +23,7 @@ var cards = [
 var cardsInPlay = [];
 var numCards = cards.length;
 var cardIndices = Array.from(Array(numCards).keys());
+var score = 0;
 
 function shuffleCards() {
 	var shuffled = cardIndices.sort(function () {
@@ -45,9 +46,12 @@ function createBoard() {
 function checkForMatch() {
 	if (cardsInPlay.length === 2) {
 		var result = document.getElementById("result");
+		var scoreCard = document.getElementById("score");
 		if (cardsInPlay[0] === cardsInPlay[1]) {
 			result.innerHTML = "You found a match!";
 			result.style.color = "#F15B31";
+			score += 1;
+			scoreCard.innerHTML = "Score: " + score;
 		} else {
 			result.innerHTML = "Sorry, try again.";
 			result.style.color = "#F15B31";
@@ -90,7 +94,7 @@ function main() {
 	resetButton.addEventListener("click", resetBoard);
 
 	var shuffleButton = document.getElementsByTagName("button")[1];
-	shuffleButton.addEventListener("click", shuffleBoard);	
+	shuffleButton.addEventListener("click", shuffleBoard);
 }
 
 main();

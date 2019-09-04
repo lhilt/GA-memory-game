@@ -24,10 +24,6 @@ img {
 	margin: 40px 8px;
 }
 
-.board {
-	white-space: nowrap;
-}
-
 h1 {
 	font-family: "Raleway", san-serif;
 	color: #0D2C40;
@@ -38,13 +34,17 @@ h1 {
 	margin: 0;
 }
 
-h2, #result {
+h2, #result, #score {
 	font-family: "Raleway", san-serif;
 	color: #0D2C40;
 	letter-spacing: 1px;
 	font-weight: 600;
 	font-size: 20px;
 	text-transform: uppercase;
+}
+
+#score {
+	margin-left: 50px;
 }
 
 button {
