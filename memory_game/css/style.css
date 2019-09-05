@@ -105,3 +105,9 @@ footer p {
 	color: #F15B31;
 	font-weight: 700;
 }
+
+@media (max-width: 720px) {
+	img {
+		width: 100px;
+	}
+}
