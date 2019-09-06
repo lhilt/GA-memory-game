@@ -45,6 +45,7 @@ function createBoard() {
 
 function checkForMatch() {
 	if (cardsInPlay.length === 2) {
+		var cardElements = document.getElementsByTagName("img");
 		var result = document.getElementById("result");
 		var scoreCard = document.getElementById("score");
 		if (cardsInPlay[0] === cardsInPlay[1]) {
@@ -55,6 +56,9 @@ function checkForMatch() {
 		} else {
 			result.innerHTML = "Sorry, try again.";
 			result.style.color = "#F15B31";
+		}
+		for (i of cardIndices) {
+			cardElements[i].removeEventListener("click", flipCard);
 		}
 	}
 }
@@ -72,6 +76,7 @@ function resetBoard() {
 	var cardElements = document.getElementsByTagName("img");
 	for (var i = 0; i < cards.length; i++) {
 		cardElements[i].setAttribute("src", "images/back.png");
+		cardElements[i].addEventListener("click", flipCard);
 	}
 	var result = document.getElementById("result");
 	result.innerHTML = "Choose two cards";
